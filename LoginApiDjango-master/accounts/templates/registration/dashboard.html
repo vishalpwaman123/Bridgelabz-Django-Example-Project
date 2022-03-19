@@ -1,0 +1,9 @@
+{% extends 'registration/index.html' %}
+
+{% block content %}
+    <h1>
+        Welcome, {{user.username}}
+    </h1>
+    <h2> Click Here to Logout</h2>
+       <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}

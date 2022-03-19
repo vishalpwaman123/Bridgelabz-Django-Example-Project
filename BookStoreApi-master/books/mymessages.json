@@ -1,0 +1,19 @@
+{
+  "book_success": "Successful, Returned all Books",
+  "success_bookname": "Successfully Returned Books with matching book name",
+  "success_bookauthor": "Successfully Returned Books with matching author name",
+  "no_books": "Sorry No Books available.",
+  "sorted_asc": "Sorted books in ascending order",
+  "sorted_desc": "Sorted books in descending order",
+  "token_notproper": "Token not proper login again",
+  "added_product": "Added product Successfully",
+  "product_exist": "Product already exists in wishlist",
+  "success_wishlist": "Successful, Returned all products from wishlist",
+  "delete_success": "Deleted product Successfully",
+  "product_not_exist": "Product doesn't exist in wishlist",
+  "product_exist_cart": "Product already exist in cart, quantity has been increased",
+  "success_cart": "Successful, returned all books from cart",
+  "success_authentication": "User authentication Successful",
+  "order_placed": "Order placed Successfully, ur total amount is %s",
+  "no_orders": "No orders present"
+}

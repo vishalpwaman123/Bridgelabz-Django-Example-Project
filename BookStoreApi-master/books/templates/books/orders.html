@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BookStore order confirmation Email</title>
+</head>
+<body>
+<div class="right_text" style="margin-top:30px ">
+        <div class="column" align="center">
+            <div class="w3-col.m8">
+                  <h2 id="logo" style="font-size: 40px">BookStore</h2><br>
+                  <h4 style="font-size: 30px,align: center,color: blue">
+                      Hello, {{ user }} </h4><br>
+                 </div>
+                 <div class="col-10 offset-1">
+                     <p style="font-size: 20px">Your Order for the below books have been placed Successfully, Order no is {{ order_num }}</p><br>
+                     <br>
+                     <p style="font-size: 30px">Products Ordered are</p><br>
+                     {% for product in products %}
+                        <p>Title: {{ product.title }}</p>
+                        <p>Image: {{ product.image }}</p>
+                        <p>Author: {{ product.author }}</p>
+                        <p>Quantity: {{ product.quantity }}</p>
+                        <p>Price: {{ product.price }}</p>
+                        <br>
+                     {% endfor %}
+                     <p>The Total Amount to be paid is <strong>Rs {{ total_amount }}</strong></p><br>
+                     <p>Thank You For Using BookStore Application.</p>
+                 </div>
+        </div>
+    </div>
+
+</body>
+</html>

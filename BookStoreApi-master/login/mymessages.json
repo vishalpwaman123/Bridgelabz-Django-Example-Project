@@ -1,0 +1,6 @@
+{
+  "login_success": "Login Successful, OTP has been sent to mobile number",
+  "not_found" : "User not found",
+  "verified" : "Verification Successful, {'token': %s}",
+  "not_correct" : "Incorrect Otp"
+}

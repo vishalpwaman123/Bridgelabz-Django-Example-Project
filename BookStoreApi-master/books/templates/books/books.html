@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books available</title>
+    {% load static %}
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/mycss.css" type="text/css">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+</head>
+
+<body class="body" style="background-color:#f6f6f6">
+<h1 style="text-align:center">Books Available Are</h1>
+<h3 style="opacity:0.6">Books( {{ count }} items )</h3>
+<div class="container">
+    <div class="row align-items-start">
+        <div class="row row-cols-5" style="border:black 2px solid">
+        {% for books in page_obj %}
+            <div class="col" style="border:white 1px solid">
+            <div>
+                <div class="hovereffect">
+                    <br><br><img src="{{ books.3 }}" class="img-responsive" style="height:360px,width:200px;"><br>
+                    <div class="overlay">
+                    <h2 class="info" style="color:blue;">{{ books.6 }}</h2>
+                </div>
+            </div>
+            </div>
+                <br><b>{{ books.1 }}</b><br>
+                <label style="opacity:0.6">{{ books.1 }}</label><br>
+                Rs{{ books.5 }}<br>
+                <a href="http://127.0.0.1:8000/bookstore/cart/add/?produc_id={{ books.0 }}" role="button" class="btn btn-primary" data-toggle="button">Add to Cart</a>
+                <a href="http://127.0.0.1:8000/bookstore/books/wishlist/add/?produc_id={{ books.0 }}" role="button" class="btn btn-danger" data-toggle="button">Wishlist</a>
+
+            </div>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page_num=1">&laquo; first</a>
+            <a href="?page_num={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page_num={{ page_obj.next_page_number }}">next</a>
+            <a href="?page_num={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+</body>
+</html>
